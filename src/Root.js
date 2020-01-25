@@ -13,7 +13,7 @@ export default props => {
           window.__REDUX_DEVTOOLS_EXTENSION__()
       )}
     >
-      {props.children}>
+      {props.children}
     </Provider>
   );
 };
