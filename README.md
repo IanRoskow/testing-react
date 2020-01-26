@@ -1,4 +1,4 @@
-[Testing React and Redux with Jest and Enzyme]
+### Testing React and Redux with Jest and Enzyme
 
 This project was created to do a simple example using jest and enzyme. This project was based on Stephen Griders Advanced React Redux course, but I modified the code to use Hooks rather than classes.
 
