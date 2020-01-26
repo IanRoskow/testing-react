@@ -1,7 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-const CommentList = ({ comments }) => {
+const CommentList = () => {
+  const comments = useSelector(state => state.comments);
   const renderComments = () => {
     return comments.map(comment => {
       return <li key={comment}>{comment}</li>;
@@ -15,8 +16,4 @@ const CommentList = ({ comments }) => {
   );
 };
 
-const mapStateToProps = ({ comments }) => {
-  return { comments };
-};
-
-export default connect(mapStateToProps)(CommentList);
+export default CommentList;
