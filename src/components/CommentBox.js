@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect, useSelector } from 'react-redux';
 import * as actions from 'actions';
 
-const CommentBox = ({ saveComment }) => {
+const CommentBox = ({ saveComment, fetchComments }) => {
   const [comment, setComment] = useState('');
 
   const handleChange = event => {
@@ -18,20 +18,23 @@ const CommentBox = ({ saveComment }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h4>Add a Comment</h4>
-      <textarea
-        value={comment}
-        onChange={handleChange}
-        name='comment'
-        id=''
-        cols='30'
-        rows='10'
-      ></textarea>
-      <div>
-        <button type='submit'>Submit Comment</button>
-      </div>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h4>Add a Comment</h4>
+        <textarea
+          value={comment}
+          onChange={handleChange}
+          name='comment'
+          id=''
+          cols='30'
+          rows='10'
+        ></textarea>
+        <div>
+          <button type='submit'>Submit Comment</button>
+        </div>
+      </form>
+      <button onClick={fetchComments}>Fetch Comments</button>
+    </div>
   );
 };
 
